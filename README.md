@@ -54,9 +54,7 @@ Copy the `.soc` file (`themes/<flavor>/<accent>/catppuccin-<flavor>-<accent>.soc
 > [!WARNING]  
 > This will backup and overwrite the `registrymodifications.xcu` configuration file.
 
-Run the [scripts/install_theme.sh](./scripts/install_theme.sh) script.
-
-E.g. 
+Run the [scripts/install_theme.sh](./scripts/install_theme.sh) script:
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/catppuccin/libreoffice/main/scripts/install_theme.sh)" -- mocha mauve
 ```
