@@ -56,7 +56,10 @@ Copy the `.soc` file (`themes/<flavor>/<accent>/catppuccin-<flavor>-<accent>.soc
 
 Run the [scripts/install_theme.sh](./scripts/install_theme.sh) script.
 
-E.g. `./scripts/install_theme.sh mocha mauve`
+E.g. 
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/catppuccin/libreoffice/main/scripts/install_theme.sh)" -- mocha mauve
+```
 
 <!-- The FAQ section is optional. Remove if needed.-->
 <!--
