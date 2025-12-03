@@ -2,8 +2,16 @@
 echo "Installation for $1 - $2"
 echo "Copying palette to config directory ..."
 if [ "$(uname)" = "Linux" ]; then
-  fname="${XDG_CONFIG_HOME:-$HOME/.config}"/libreoffice/*/user/registrymodifications.xcu
-  fname="$(realpath $fname)" # expand
+  # First check Flatpak per-app config path used by Flatpak installs of LibreOffice
+  flatpak_glob="$HOME/.var/app/org.libreoffice.LibreOffice/config/libreoffice/*/user/registrymodifications.xcu"
+  if compgen -G "$flatpak_glob" > /dev/null; then
+    # take the first match
+    matched_file="$(compgen -G "$flatpak_glob" | head -n1)"
+    fname="$(realpath "$matched_file")"
+  else
+    fname="${XDG_CONFIG_HOME:-$HOME/.config}"/libreoffice/*/user/registrymodifications.xcu
+    fname="$(realpath "$fname")" # expand
+  fi
 elif [ "$(uname)" = "Darwin" ]; then
   cd "$HOME/Library/Application Support/LibreOffice"/*/user # no realpath on macos
   fname="$(pwd)/registrymodifications.xcu"

@@ -46,6 +46,8 @@ Copy the `.soc` file (`themes/<flavor>/<accent>/catppuccin-<flavor>-<accent>.soc
 - **macOS**: `$HOME/Library/Application Support/LibreOffice"/*/user/config/`
 - **Windows**: `$HOME/AppData/Roaming/LibreOffice"/*/user/config/`
 
+Important: After copying the chosen `.soc` file, open LibreOffice and go to Tools → Options → LibreOffice → Appearance. Toggle the "Enable application theming" setting to ensure the theming settings file is generated. Then fully close all LibreOffice windows (save your work) before running the install script.
+
 ### Application Colors
 
 > [!IMPORTANT]  
